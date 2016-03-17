@@ -18,5 +18,4 @@ class EqualSubstrings2:
 
         return cnt
 
-
 print(EqualSubstrings2().get("abab"))
