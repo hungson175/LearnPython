@@ -1,21 +1,18 @@
-
-def count(s, i, j):
-    length = j - i + 1
-    cnt = 0
-    for k in range(j + 1, len(s)):
-        if k + length <= len(s):
-            if s[i:j + 1] == s[k:k + length]:
-                cnt += 1
-    return cnt
+import functools
 
 
-class EqualSubstrings2:
-    def get(self, s):
-        cnt = 0
-        for i in range(0, len(s)):
-            for j in range(i, len(s)):
-                cnt += count(s,i,j)
+class MountainRanges:
+    def countPeaks(self, heights):
+        # h = list(heights)
+        # h.insert(0, 0)
+        # h.insert(len(h), 0)
+        # cnt = 0
+        # print(h)
+        # for i in range(1, len(h) - 1):
+        #     if h[i] > h[i - 1] and h[i] > h[i + 1]:
+        #         cnt += 1
+        # return cnt
+        h = list((0,) + tuple(heights) + (0,))
+        return len(filter(lambda i: h[i] > h[i-1] and h[i] > h[i+1], range(1,len(h)-1)))
 
-        return cnt
-
-print(EqualSubstrings2().get("abab"))
+print(MountainRanges().countPeaks([1]))
