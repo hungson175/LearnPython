@@ -13,6 +13,11 @@ class CoinFlipsDiv2:
         )
 
 
-print(CoinFlipsDiv2().countCoins("HT"))
+# print(CoinFlipsDiv2().countCoins("HT"))
+#
+# print(list(range(1, 10)))
+a = [1,2,3,4]
+b = [1,2,3]
+b.append(4)
 
-print(list(range(1, 10)))
+print( a == b)
